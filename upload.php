@@ -3,10 +3,10 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+include '_header.php';
 include 'data/db.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    session_start();
     $user_id = $_SESSION['user_id'];
     $title = $_POST['title'];
     $description = $_POST['description'];
@@ -53,7 +53,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <?php
 $title = "Upload Event";
-include '_header.php';
 ?>
 <main>
     <div class="container">
