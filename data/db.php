@@ -4,9 +4,14 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 $servername = "localhost";
-$username = "id22218414_phpuser";
-$password = "zE792a|*";
-$dbname = "id22218414_planpal";
+$username = "phpUser";
+$password = "password";
+$dbname = "planpal";
+
+// $servername = "localhost";
+// $username = "id22218414_phpuser";
+// $password = "zE792a|*";
+// $dbname = "id22218414_planpal";
 
 try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);

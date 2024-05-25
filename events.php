@@ -28,7 +28,7 @@ $events = getFilteredEvents($search);
         <br />
         <div class="events-list">
             <?php foreach ($events as $event) : ?>
-                <div class="event-item">
+                <div class="event-item hidden">
                     <img src="<?php echo htmlspecialchars($event['image']); ?>" alt="<?php echo htmlspecialchars($event['title']); ?>">
                     <div class="event-info">
                         <h2><?php echo htmlspecialchars($event['title']); ?></h2>

@@ -10,6 +10,8 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo isset($title) ? $title : 'PlanPal'; ?></title>
     <link rel="stylesheet" href="assets/css/styles.css">
+
+    <script src="assets/js//script.js"></script>
 </head>
 
 <body style="height: 100vh">

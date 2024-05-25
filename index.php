@@ -23,7 +23,7 @@ $specialDeals = getRandomEventsWithPrices(5);
     </div>
   </section>
 
-  <section class="events">
+  <section class="events hidden">
     <div>
       <h2>Event for you</h2>
       <div class="events-scroll">
@@ -37,12 +37,12 @@ $specialDeals = getRandomEventsWithPrices(5);
                 <?php echo formatPriceTiers($event['tier_names'], $event['tier_prices']); ?>
               </div>
             </a>
-          </div>
+          </div>-
         <?php endforeach; ?>
       </div>
     </div>
   </section>
-  <section class="events">
+  <section class="events hidden">
     <div>
       <h2>Special Deals</h2>
       <div class="events-scroll">
