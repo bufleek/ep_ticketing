@@ -1,10 +1,9 @@
 <?php
+include '_header.php';
 
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-
-include '_header.php';
 
 include 'data/db.php';
 
@@ -38,7 +37,11 @@ $title = $event['title'];
                             echo '<div class="ticket-content">';
                             echo '<span class="ticket-tier">' . htmlspecialchars($names[$i]) . '</span>';
                             echo '<span class="ticket-price">$' . htmlspecialchars($prices[$i]) . '</span>';
-                            echo '<button class="btn-secondary">Buy ' . htmlspecialchars($names[$i]) . '</button>';
+                            echo '<button class="btn-secondary buy-ticket-btn"
+                                data-event-id="' . $id . '"
+                                data-tier-name="' . htmlspecialchars($names[$i]) . '"
+                                data-tier-price="' . htmlspecialchars($prices[$i]) . '"
+                            >Buy ' . htmlspecialchars($names[$i]) . '</button>';
                             echo '</div>';
                             echo '</div>';
                         }
@@ -51,6 +54,35 @@ $title = $event['title'];
         <?php endif; ?>
     </div>
 </main>
+
+<div id="ticketPopup" class="popup hidden-popup">
+    <div class="popup-content">
+        <span class="close-btn">&times;</span>
+        <h2>Buy Tickets for <span id="popupEventTitle"><?php echo htmlspecialchars($event['title']); ?></span></h2>
+        <form id="ticketForm" style="margin-top: 30px;">
+            <label for="userName">Name:</label>
+            <input type="text" id="userName" name="userName" required>
+            <label for="userEmail">Email:</label>
+            <input type="email" id="userEmail" name="userEmail" required>
+            <label for="ticketQuantity">Number of Tickets:</label>
+            <input type="number" id="ticketQuantity" name="ticketQuantity" min="1" required>
+            <div id="ticketSummary">
+            </div>
+            <button type="submit" class="btn-primary">Confirm Purchase</button>
+        </form>
+    </div>
+</div>
+
+<div id="receiptPopup" class="popup hidden-popup">
+    <div class="popup-content">
+        <span class="close-btn" id="closeReceiptBtn">&times;</span>
+        <div id="receiptContent">
+        </div>
+        <button id="printReceiptBtn" class="btn-primary">Print Receipt</button>
+    </div>
+</div>
+
+<script src="assets/js/purchase.js"></script>
 
 <?php
 include '_footer.php';

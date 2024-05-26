@@ -1,6 +1,6 @@
 CREATE DATABASE IF NOT EXISTS `planpal`;
 
-CREATE TABLE planpal.users (
+CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     email VARCHAR(255) NOT NULL UNIQUE,
     first_name VARCHAR(50) NOT NULL,
@@ -10,7 +10,7 @@ CREATE TABLE planpal.users (
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
-CREATE TABLE planpal.events (
+CREATE TABLE events (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT NOT NULL,
     title VARCHAR(255) NOT NULL,
@@ -23,7 +23,7 @@ CREATE TABLE planpal.events (
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
-CREATE TABLE planpal.event_price_tiers (
+CREATE TABLE event_price_tiers (
     id INT AUTO_INCREMENT PRIMARY KEY,
     event_id INT NOT NULL,
     tier_name VARCHAR(100) NOT NULL,
@@ -35,7 +35,7 @@ CREATE TABLE planpal.event_price_tiers (
     FOREIGN KEY (event_id) REFERENCES events(id)
 );
 
-CREATE TABLE planpal.contact_us (
+CREATE TABLE contact_us (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL,

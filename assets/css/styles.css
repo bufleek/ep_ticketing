@@ -604,3 +604,91 @@ footer .contact-form button {
 .hidden {
     opacity: 0;
 }
+
+/* Popup styles */
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+}
+
+.popup-content h2 {
+  margin-top: 0;
+}
+
+.popup-content p {
+  margin-bottom: 15px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.hidden-popup {
+  display: none;
+}
+
+#ticketForm,
+#receiptContent {
+  display: flex;
+  flex-direction: column;
+}
+
+#ticketForm label,
+#receiptContent label {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+#ticketForm input[type="text"],
+#ticketForm input[type="email"],
+#ticketForm input[type="number"] {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#ticketSummary,
+#receiptContent {
+  margin-bottom: 20px;
+}
+
+#ticketForm button,
+#receiptPopup button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #ff6600;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#ticketForm button:hover,
+#receiptPopup button:hover {
+  background-color: #e65c00;
+}
